@@ -53,29 +53,26 @@ void loop() {
   Since Led is READ_WRITE variable, onLedChange() is
   executed every time a new value is received from IoT Cloud.
 */
+
+void blinkLED(int msecs){
+      digitalWrite(LED_BUILTIN, HIGH);
+      delay(msecs);
+      digitalWrite(LED_BUILTIN, LOW);
+      delay(300);
+}
+
 void onLedChange()  {
   for(int i = 0; i < 6; i++)
     {
-      digitalWrite(LED_BUILTIN, HIGH);
-      delay(500);
-      digitalWrite(LED_BUILTIN, LOW);
-      delay(300);
+      blinkLED(500);
     }
 
-      digitalWrite(LED_BUILTIN, HIGH);
-      delay(200);
-      digitalWrite(LED_BUILTIN, LOW);
-      delay(300);
+      blinkLED(200);
 
-      digitalWrite(LED_BUILTIN, HIGH);
-      delay(500);
-      digitalWrite(LED_BUILTIN, LOW);
-      delay(300);
+      blinkLED(500);
+  
   for(int i = 0; i < 7; i++)
     {
-      digitalWrite(LED_BUILTIN, HIGH);
-      delay(200);
-      digitalWrite(LED_BUILTIN, LOW);
-      delay(300);
+      blinkLED(200);
     }
 }
